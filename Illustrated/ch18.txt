@@ -8,7 +8,11 @@ my question:
 
 
 3，为什么要有2MSL的时间？
-
+一，防止旧连接的延迟报文乱入新连接，即等待2MSL让报文自己消失
+二，正确的关闭全双工连接，客户端发送的最后一个ACK若没到服务器，服务器端会重发FIN，等待2MSL时间以便重发最后一个ACK。
+see the blew links for more detail:
+https://vincent.bernat.im/en/blog/2014-tcp-time-wait-state-linux
+http://www.serverframework.com/asynchronousevents/2011/01/time-wait-and-its-design-implications-for-protocols-and-scalable-servers.html
 
 
 exercise:
